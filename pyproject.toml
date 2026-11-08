@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "truthai-human-review"
+version = "0.1.0"
+description = "Snapshot-bound human review and ResearchOS evidence replay"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+[project.scripts]
+truthai-review = "human_review.__main__:main"
+[tool.setuptools.packages.find]
+include = ["human_review*"]
