@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-08T00:00:00Z",
+  "expires_at": "2026-12-08T00:00:00Z",
+  "cases": [
+    {
+      "id": "claim-a",
+      "version": 1,
+      "statement": "Synthetic claim for review, not a mathematical result",
+      "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "minimum_reviews": 2,
+      "dependencies": []
+    }
+  ],
+  "reviewers": [
+    {
+      "id": "reviewer-1",
+      "roles": [
+        "reviewer"
+      ],
+      "conflicts": [],
+      "max_assignments": 2
+    },
+    {
+      "id": "reviewer-2",
+      "roles": [
+        "reviewer"
+      ],
+      "conflicts": [],
+      "max_assignments": 2
+    },
+    {
+      "id": "adjudicator-1",
+      "roles": [
+        "adjudicator"
+      ],
+      "conflicts": [],
+      "max_assignments": 2
+    }
+  ],
+  "assignments": [
+    {
+      "case_id": "claim-a",
+      "reviewer_id": "reviewer-1"
+    },
+    {
+      "case_id": "claim-a",
+      "reviewer_id": "reviewer-2"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "review-1",
+      "case_id": "claim-a",
+      "case_version": 1,
+      "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_id": "reviewer-1",
+      "verdict": "accept",
+      "seconds": 60,
+      "findings": [],
+      "reviewed_at": "2026-11-07T12:00:00Z"
+    },
+    {
+      "id": "review-2",
+      "case_id": "claim-a",
+      "case_version": 1,
+      "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "reviewer_id": "reviewer-2",
+      "verdict": "accept",
+      "seconds": 120,
+      "findings": [],
+      "reviewed_at": "2026-11-07T12:00:00Z"
+    }
+  ],
+  "adjudications": [
+    {
+      "case_id": "claim-a",
+      "case_version": 1,
+      "artifact_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "adjudicator_id": "adjudicator-1",
+      "decision": "accept",
+      "reason": "Synthetic fixture has no declared findings; no real human review is asserted.",
+      "submission_ids": [
+        "review-1",
+        "review-2"
+      ],
+      "resolutions": [],
+      "adjudicated_at": "2026-11-07T13:00:00Z"
+    }
+  ]
+}
