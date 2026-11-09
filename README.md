@@ -103,3 +103,5 @@ Not implemented: authenticated users/signatures, persistent concurrent editing,
 automatic expert recruitment, real artifact custody, blinded comparative trials or
 verified review-time savings. Existing Apache-2.0 license retained; canonical vendored
 ResearchOs code is Apache-2.0.
+
+**∞**
