@@ -1,5 +1,14 @@
 # TruthAI Human Review
 
+<!-- research-workbench:start -->
+## Research workbench
+
+[Open this repository's private workbench](https://tltmgnt-truthai-human-review.troturn31.chatgpt.site) · [All repository workbenches](https://tltmgnt-research-workbenches.troturn31.chatgpt.site)
+
+The hosted interface requires ChatGPT sign-in and access to the private Site. It supports browser-local research records, evidence fingerprints and workspace export. It is a prototype: no live AI model or repository backend is connected, and it does not establish external validation.
+<!-- research-workbench:end -->
+
+
 Offline, snapshot-bound reviewer assignments, findings, explicit adjudication and
 ResearchOS evidence replay. The package checks supplied review declarations; it does
 not authenticate reviewers, send invitations, host accounts or establish scientific truth.
