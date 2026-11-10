@@ -1,6 +1,6 @@
 # Topology compatibility and curriculum v2 — TruthAI-Human-Review
 
-Version 2 adapts the explicit-molecular-graph teaching pattern to this repository's actual role. This is documentation and a learning/decision framework; it introduces no mathematical engine, runtime dependency or operational permission.
+The verified edition of version 2 adapts the explicit-molecular-graph teaching pattern to this repository's actual role. This edition adds executable learning checks and reviewed answer keys. It does not introduce a new topology engine or grant operational permission.
 
 ## Repository decision
 
@@ -40,45 +40,54 @@ Prerequisites: basic programming, sets, functions and graph vocabulary. Work in 
 | 5. Comparison | Justify mathematical necessity and cost. | Complete the six-criterion card for the existing approach and one proposed alternative; record unknowns honestly. | Evidence-backed recommendation with baseline and explicit veto conditions. |
 | 6. Reproduction | Communicate the bounded result. | Reproduce the capstone using existing offline fixtures and record software version, inputs, outputs and limitations. | Reviewable notebook or report distinguishing computation, replay, independent evaluation and authorization. |
 
-## Source-linked reading laboratory
+## Worked reasoning and source explanation
 
-The table is a guided selection of source lines, not an assertion that the whole repository is covered. Line numbers refer to the inspected source blob `176647a962efa1c89181265201e2fecd256b5d5c` in [human_review/workflow.py](../../human_review/workflow.py). Recheck anchors after source changes.
+evaluate() binds submissions and adjudications to case versions and artifact digests. The reference's explicit adjudication yields accepted_declared and 180 recorded seconds. Removing adjudication leaves ADJUDICATION_MISSING even if reviewers agree; changing a submitted case version is rejected. The outcome records supplied review declarations and is not proof of reviewer identity or independence.
 
-| Line | Statement | Learning check |
+Read the [inspected source](https://github.com/tltmgnt/TruthAI-Human-Review/blob/e515497551d043f6d592a7f16a659b7245e00145/human_review/workflow.py) alongside the [executable answer key](../../curriculum/lab.py). The source link is pinned to the inspected revision; the lab and any explicitly described fix are in this change.
+
+## Run the worked laboratory
+
+From the repository root, with Python 3.12 (the recorded local version is 3.12.14):
+
+```sh
+python curriculum/lab.py --verify
+```
+
+The lab checks **6 explicit expectations** against existing repository functions. It prints a JSON case report and exits nonzero on a wrong result. `--verify` additionally compares the entire case report with [expected.json](../../curriculum/expected.json). Read the input and predict each result before opening the answer key. No API account, credentials, model download, trading action or equipment connection is needed.
+
+| Checkpoint | Expected answer |
+| --- | --- |
+| explicit adjudication records declared acceptance | `"accepted_declared"` |
+| declared review effort | `180` |
+| independence is not authenticated | `false` |
+| votes alone do not adjudicate | `"review_required"` |
+| missing adjudication is visible | `true` |
+| stale version-bound review | `"ValueError"` |
+
+The comparisons above encode independently specified small examples and contract expectations; a passing answer key is not evidence of complete domain correctness. The original functions and their existing test suites remain the authority for broader supported contracts.
+
+## Learner tasks and assessment rubric
+
+1. Before running the lab, predict every expected answer and derive one numeric result or state transition by hand.
+2. Explain the worked reasoning above using the referenced source, including the rejected or counterexample case.
+3. Add a new valid example and a nearby failing example. Explain which assumption changes, then compare against the existing implementation. For concept/static labs, keep the result explicitly at that level.
+4. Complete the scorecard for a proposed extension and a simpler baseline. Leave measurements unknown until collected; a task that the baseline already solves is not evidence for additional topology.
+
+| Competency | Points | Full-credit evidence |
 | --- | --- | --- |
-| [6](../../human_review/workflow.py#L6) | `def sha(value):` | State the input/output contract and trace one normal and one failing case. |
-| [8](../../human_review/workflow.py#L8) | `raise ValueError('SHA-256 artifact reference required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [11](../../human_review/workflow.py#L11) | `def indexed(items, maximum):` | State the input/output contract and trace one normal and one failing case. |
-| [13](../../human_review/workflow.py#L13) | `raise ValueError('Nonempty bounded records required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [17](../../human_review/workflow.py#L17) | `raise ValueError('Object records required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [20](../../human_review/workflow.py#L20) | `raise ValueError('Duplicate record ID')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [22](../../human_review/workflow.py#L22) | `return result` | Predict the returned value and distinguish a computed result from authorization. |
-| [25](../../human_review/workflow.py#L25) | `def labels(items):` | State the input/output contract and trace one normal and one failing case. |
-| [27](../../human_review/workflow.py#L27) | `raise ValueError('List of identifiers required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [31](../../human_review/workflow.py#L31) | `raise ValueError('Duplicate identifier')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [34](../../human_review/workflow.py#L34) | `def evaluate(data):` | State the input/output contract and trace one normal and one failing case. |
-| [35](../../human_review/workflow.py#L35) | `fields(data, ('schema_version', 'as_of', 'expires_at', 'cases', 'reviewers',` | Separate type, shape and value checks; test a missing field and an invalid value. |
-| [37](../../human_review/workflow.py#L37) | `if type(data['schema_version']) is not int or data['schema_version'] != 1:` | Separate type, shape and value checks; test a missing field and an invalid value. |
-| [38](../../human_review/workflow.py#L38) | `raise ValueError('Unsupported schema version')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [40](../../human_review/workflow.py#L40) | `raise ValueError('Expiry must follow assessment time')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [46](../../human_review/workflow.py#L46) | `raise ValueError('Positive case version required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [48](../../human_review/workflow.py#L48) | `raise ValueError('Between 1 and 10 reviews required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [50](../../human_review/workflow.py#L50) | `raise ValueError('Unknown or self dependency')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [52](../../human_review/workflow.py#L52) | `def visit(cid):` | State the input/output contract and trace one normal and one failing case. |
-| [53](../../human_review/workflow.py#L53) | `if cid in visiting: raise ValueError('Cyclic case dependencies')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [63](../../human_review/workflow.py#L63) | `raise ValueError('Unknown or empty roles')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [65](../../human_review/workflow.py#L65) | `raise ValueError('Unknown conflict case')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [67](../../human_review/workflow.py#L67) | `raise ValueError('Bounded reviewer capacity required')` | Construct the triggering input and explain why rejection preserves the contract. |
-| [71](../../human_review/workflow.py#L71) | `raise ValueError('Bounded workflow lists required')` | Construct the triggering input and explain why rejection preserves the contract. |
-## Assessment and verification
+| Model and contract | 0–3 | Correct objects, relation direction, labels/units, input bounds and missingness. |
+| Derivation and trace | 0–3 | Hand derivation agrees with the specified fixture; source steps explain why. |
+| Counterexample | 0–3 | New failing/boundary case has a justified expected result; rejection is not suppressed. |
+| Scope and necessity | 0–3 | Distinguishes software behavior from validation and compares an explicit simpler alternative. |
 
-A learner must explain the model, trace the capstone, identify a counterexample and state the scope boundary. Assess these four competencies equally; a numerical score cannot compensate for an unsupported scientific or operational claim.
+Completion requires at least 10/12 and no zero in scope/necessity. A runnable answer key alone is not evidence that a learner achieved this competency. No learner-outcome study has been performed.
 
-Relevant existing checks:
+## Verification evidence and maintenance
 
-- [tests/test_review.py](../../tests/test_review.py)
+[VALIDATION.json](../../curriculum/VALIDATION.json) records the inspected base revision, local Python version, source/fixture hashes, lab/answer hashes, case count and exit codes. All cases were executed locally. An in-memory copy with a deliberately wrong comparison was also executed and returned nonzero, checking that the grading failure path is active. Those injected failures are harness checks, not scientific adversarial evaluations.
 
-Follow [README](../../README.md) for environment and installed-package instructions. Read scripts before execution; source-reading exercises do not authorize provider calls, model downloads, live orders, hardware actions or messages. Synthetic fixtures establish software behavior only. This documentation change does not report those exercises as already executed.
+The dedicated [curriculum workflow](../../.github/workflows/curriculum.yml) runs the same `--verify` command on relevant pull-request changes. CI status is reported by GitHub; the local record does not assert that remote CI passed. Existing full-suite and installed-package requirements still apply to runtime changes. When source or fixture semantics change, inspect the diff and rederive answers before updating expected.json. Never regenerate expected answers solely to silence a failure. Refresh the local validation record after an actual run; do not rewrite its recorded base revision as if a new run occurred.
 
 ## Interoperability and adoption gate
 

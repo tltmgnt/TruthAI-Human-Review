@@ -1,0 +1,27 @@
+{
+  "case_count": 6,
+  "command": "python curriculum/lab.py --verify",
+  "exit_code": 0,
+  "expected_sha256": "ba71b41db90146fbe40930937c2baa79c8103464d3288b95cba0892b7f5d6fc7",
+  "lab_sha256": "cd90c75629f7d65f16ae60fb92a2494a9fb0a9d14a43431f3091d465cce01c53",
+  "python": "3.12.14",
+  "repository": "tltmgnt/TruthAI-Human-Review",
+  "schema_version": 1,
+  "scope": "Local synthetic curriculum validation on the recorded source snapshot; not complete repository CI, learning outcomes, independent scientific reproduction or deployment approval",
+  "source_and_fixture_sha256": {
+    "examples/review.json": "d4a35dcdf4087c32a1cd88b98af9e41b3aad00fb4a8e1deb0580baf920e5c5ae",
+    "human_review/__init__.py": "159b7eb78934a40ffc58d48b75bd806b6d1045a2112c9fe9c09db6af28127872",
+    "human_review/__main__.py": "e7e74f61b848b0d648b520fd5c8cc47630416499c64548ff8a707542d1bb0aae",
+    "human_review/_tect/__init__.py": "532852937b0d9ae7a09360426373a909171eedcceda6c7b814397a4545132dc3",
+    "human_review/_tect/__main__.py": "01b079617de0074b77c6746068d51b4921ce6fbb157778d9a10135b966ddb2fb",
+    "human_review/_tect/core.py": "f00f5c34be6d0e2cc107754b46da2f94fd2a2b43a7cf08a86cae4c114dec520e",
+    "human_review/_tect/experiments.py": "78716550613dcc902190a2c10a9c56070bd6e6f4a2b4f1db9617295a9c90e519",
+    "human_review/_tect/io.py": "4ee33f9733fc3225072fe9602e95e14a98d2968bf7903fcc660c1fc914a34383",
+    "human_review/_tect/pilot.py": "d029c7aee3d6e5adf302ed7caa15ec4934ca79c0a8be86b55124e6939d2663c5",
+    "human_review/bundle.py": "2ed86a8f6758e7869473258149901f026680ed1c44c20e2cd916147353c3e97e",
+    "human_review/researchos.py": "4c922a74da3bc116aad63d15216983224e0f7d44dfa391ec56e11086f0501f3b",
+    "human_review/workflow.py": "66131b197d94399b92d7c573b26532fc713964453430baa3f4915a2e17480de9"
+  },
+  "source_base_commit": "e515497551d043f6d592a7f16a659b7245e00145",
+  "wrong_expectation_exit_code": 1
+}

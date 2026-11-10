@@ -1,0 +1,44 @@
+{
+  "case_count": 6,
+  "cases": [
+    {
+      "actual": "accepted_declared",
+      "case": "explicit adjudication records declared acceptance",
+      "expected": "accepted_declared",
+      "passed": true
+    },
+    {
+      "actual": 180,
+      "case": "declared review effort",
+      "expected": 180,
+      "passed": true
+    },
+    {
+      "actual": false,
+      "case": "independence is not authenticated",
+      "expected": false,
+      "passed": true
+    },
+    {
+      "actual": "review_required",
+      "case": "votes alone do not adjudicate",
+      "expected": "review_required",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "case": "missing adjudication is visible",
+      "expected": true,
+      "passed": true
+    },
+    {
+      "actual": "ValueError",
+      "case": "stale version-bound review",
+      "expected": "ValueError",
+      "passed": true
+    }
+  ],
+  "schema_version": 1,
+  "scope": "Synthetic curriculum checks only",
+  "status": "PASS"
+}
